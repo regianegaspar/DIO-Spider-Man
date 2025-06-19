@@ -90,3 +90,84 @@
   background-image: url("../images/spiderman-tobey/movie-01/background.png");
   background-size: cover;
 }
+
+.gallery{
+    padding: 20px;
+    padding-left: 0;
+}
+
+.gallery ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.gallery ul li{
+    margin-left: 25px;
+}
+
+.gallery ul li:first-child{
+    margin-left: 0px;
+}
+
+.gallery ul li a img{
+    border: solid 6px white;
+    border-radius: 15px;
+}
+
+.navigator{
+    align-items: center;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.navigator ul li{
+    margin: 60px 0;
+}
+
+.navigator ul li:first-child{
+    margin-top: 0;
+}
+
+.navigator ul li:last-child{
+    margin-bottom: 0;
+}
+
+.navigator ul li a{
+    align-items: center;
+    background-color: black;
+    border: solid 2px white;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    height: 45px;
+    justify-content: center;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+    width: 45px;
+}
+
+.navigator::before{
+    background-color: white;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    z-index: 0;
+}
+
+.navigator ul{
+    z-index: 1;
+}
+
+.navigator ul li a:hover, .navigator ul li a:active{
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.navigator .navigator__icon{
+    position: absolute;
+    top: -20px;
+}
