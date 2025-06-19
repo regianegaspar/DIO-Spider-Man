@@ -1,12 +1,12 @@
-@import url('/assets/css/reset.css');
-@import url('/assets/css/global.css');
+@import url('reset.css');
+@import url('global.css');
 
 body{
     background-color: var(--primary-color);
 }
 
 body::before{
-    background-image: url('/assets/images/spider-man-background.jpg');
+    background-image: url('../images/spider-man-background.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -155,15 +155,15 @@ outline: 0.125rem solid white;
 
 /* Trocando a imagem de fundo */
 body#spider-man-01-hovered::before{
-    background-image: url('/assets/images/pic-sm-bg-01.jpg');
+    background-image: url('../images/pic-sm-bg-01.jpg');
 }
 
 body#spider-man-02-hovered::before{
-    background-image: url('/assets/images/pic-sm-bg-02.jpg');
+    background-image: url('../images/pic-sm-bg-02.jpg');
 }
 
 body#spider-man-03-hovered::before{
-    background-image: url('/assets/images/pic-sm-bg-03.jpg');
+    background-image: url('../images/pic-sm-bg-03.jpg');
 }
 
 /* Tirando o vermelho do fundo */
