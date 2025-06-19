@@ -18,5 +18,7 @@
 
 .gallery ul li a img{
     border: solid 6px white;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    border-radius: 50%;
+    max-width: 180px;
 }
