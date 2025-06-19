@@ -1,0 +1,190 @@
+@import url('/assets/css/reset.css');
+@import url('/assets/css/global.css');
+
+body{
+    background-color: var(--primary-color);
+}
+
+body::before{
+    background-image: url('/assets/images/spider-man-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    height: 100%;
+    opacity: 0.2;
+    position: absolute;
+    transition: backgroundimage 1s ease-in-out, opacity 1s ease-in-out;
+    width: 100%;
+}
+
+.s-menu{
+    padding: 1rem 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.s-menu__item{
+    display: inline-block;
+    margin: 0 1.25rem;
+    text-transform: uppercase;
+}
+
+.s-menu__icon{
+    margin: 0 1.25rem;
+    vertical-align: middle;
+    width: 2.5rem;
+}
+
+.s-container{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+perspective: 3000px;
+    position: relative;
+    transition: filter .5s ease-in-out;
+}
+
+.s-card{
+    border: 0.5rem solid white;
+    height: 70vh;
+    position: absolute;
+transition: filter .5s ease-in-out;
+    width: 100%;
+}
+
+.s-card:nth-child(1){
+transform: rotateY(0deg) translateZ(50vw);
+}
+
+.s-card:nth-child(2){
+transform: rotateY(120deg) translateZ(50vw);
+}
+
+.s-card:nth-child(3){
+transform: rotateY(240deg) translateZ(50vw);
+}
+
+.s-card__background{
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+    width: 100%;
+}
+
+.s-card__image{
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    transition: 1s ease-in-out;
+    width: 100%;
+}
+
+.s-card__title{
+    bottom: 0;
+    font-size: 2rem;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    transition: bottom 1s ease-in-out;
+    width: 100%;
+}
+
+.s-controller{
+    align-items: center;
+bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    position: absolute;
+width: 100%;
+}
+
+.s-controller__button{
+    align-items: center;
+    background-color: var(--primary-color);
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.5rem;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 2.5rem;
+    z-index: 1;
+}
+
+.s-controller__button:nth-child(2){
+    margin: 0 3.75rem;
+}
+
+.s-controller__button:hover{
+    transform: scale(1.1);
+}
+
+.s-controller__button--active{
+background-color: white;
+border: 0.1875rem solid var(--primary-color);
+color: var(--primary-color);
+outline: 0.125rem solid white;
+}
+
+.s-controller__line{
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    width: 50%;
+}
+
+/* Animação no hover da imagem */
+.s-card--hovered .s-card__background{
+    cursor: pointer;
+    opacity: 0;
+}
+
+.s-card--hovered .s-card__image{
+    filter: drop-shadow(30px 10 px 4px rgba(0, 0, 0, .5));
+    transform: scale(1.4);
+}
+
+/* Trocando a imagem de fundo */
+body#spider-man-01-hovered::before{
+    background-image: url('/assets/images/pic-sm-bg-01.jpg');
+}
+
+body#spider-man-02-hovered::before{
+    background-image: url('/assets/images/pic-sm-bg-02.jpg');
+}
+
+body#spider-man-03-hovered::before{
+    background-image: url('/assets/images/pic-sm-bg-03.jpg');
+}
+
+/* Tirando o vermelho do fundo */
+body[id^="spider-man-"]::before{
+    opacity: 1;
+}
+
+body[id^="spider-man-"] .s-card:not(.s-card--hovered){
+    filter: grayscale(100%);
+}
+
+/* Nome do ator vai para o centro */
+.s-card--hovered .s-card__title{
+    bottom: 50%;
+}
+
+/*Carousel*/
+.s-card-carousel{
+display: flex;
+justify-content: center;
+transform-style: preserve-3d;
+transition:transform 0.4s ease-in;
+width: calc(100vw / 3 - 10%);
+}
